@@ -18,14 +18,26 @@
   "scripts": {
     "asbuild:debug": "asc assembly/index.ts --target debug",
     "asbuild:release": "asc assembly/index.ts --target release",
-    "asbuild:watch": "nodemon -e ts --exec 'npm run asbuild'",
-    "asbuild": "run-p asbuild:debug asbuild:release",
-    "test": "jest",
+    "asbuild:watch": "nodemon -w assembly --exec 'npm run asbuild'",
+    "asbuild": "run-s asbuild:debug asbuild:release asbuild:fix:*",
+    "asbuild:fix:debug": "sed -i .bak 's/debug.wasm/.\\/debug.wasm/g' public/build/debug.js",
+    "asbuild:fix:release": "sed -i .bak 's/release.wasm/.\\/release.wasm/g' public/build/release.js",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "dev": "run-p asbuild:watch dev:wmr",
     "dev:wmr": "wmr",
     "build:copy": "copyfiles public/build/* dist -u 1",
     "build:wmr": "wmr build",
     "build": "run-s asbuild build:wmr build:copy",
     "start": "wmr serve"
+  },
+  "dependencies": {
+    "assemblyscript-json": "^1.1.0"
+  },
+  "wallaby": {
+    "env": {
+      "params": {
+        "runner": "--experimental-vm-modules"
+      }
+    }
   }
 }

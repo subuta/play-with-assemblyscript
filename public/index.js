@@ -1,4 +1,3 @@
-import { load } from './binding';
+import { add } from './build/release.js';
 
-const module = await load();
-document.body.innerText = module.add(1, 2);
+document.body.innerText = add(1, 2);

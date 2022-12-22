@@ -2,7 +2,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./public/binding.js"
+      "import": "./public/build/release.js"
     }
   },
   "scripts": {
@@ -14,7 +14,7 @@
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "dev": "run-p asbuild:watch dev:spack start",
     "dev:spack": "nodemon -w src --exec 'npm run build:spack'",
-    "build:spack": "spack",
+    "build:spack": "spack --config \"$PWD/spack.config.cjs\"",
     "build": "run-s asbuild build:spack",
     "start": "cd public && serve -l 3000"
   },

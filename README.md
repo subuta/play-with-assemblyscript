@@ -1,9 +1,9 @@
 ## play-with-assemblyscript
 
-`AssemblyScript + wmr + jest` setup.
+`AssemblyScript + swc(spack) + jest` setup.
 
 - [AssemblyScript/assemblyscript: A TypeScript-like language for WebAssembly.](https://github.com/AssemblyScript/assemblyscript)
-- [preactjs/wmr: 👩‍🚀 The tiny all-in-one development tool for modern web apps.](https://github.com/preactjs/wmr)
+- [swc-project/swc: Rust-based platform for the Web](https://github.com/swc-project/swc)
 - [facebook/jest: Delightful JavaScript Testing.](https://github.com/facebook/jest)
 
 ## How to develop

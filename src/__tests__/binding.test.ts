@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { add } from '../build/release.js'
+import { add } from '../../public/build/debug.js'
 
 // Test WASM code through JS Binding.
 describe('binding', () => {

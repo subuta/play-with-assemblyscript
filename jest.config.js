@@ -1,7 +1,7 @@
 export default {
   testMatch: [
     // Test WASM code through JS Binding.
-    "<rootDir>/public/**/__tests__/*.test.ts",
+    "<rootDir>/src/**/__tests__/*.test.ts",
   ],
   extensionsToTreatAsEsm: ['.ts'],
   transform: {
